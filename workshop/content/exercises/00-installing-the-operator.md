@@ -50,7 +50,17 @@ oc rollout status deployment/strimzi-cluster-operator
 
 ### Configure monitoring of all namespaces
 
-By default the Kafka operator will only monitor the project it is deployed in. To have it monitor all namespaces, it is necessary to override the `STRIMZI_NAMESPACE` environment variable in the deployment configuration, and list the projects to be monitored, or use `*` to indicate that all projects should be monitored.
+By default the Kafka operator will only monitor the project it is deployed in. To have it monitor all namespaces, it is necessary to override the deployment configuration, and add additional cluster roles for the deploymemt.
+
+To add the cluster roles, run:
+
+```execute
+oc adm policy add-cluster-role-to-user strimzi-cluster-operator-namespaced --serviceaccount strimzi-cluster-operator
+oc adm policy add-cluster-role-to-user strimzi-entity-operator --serviceaccount strimzi-cluster-operator
+oc adm policy add-cluster-role-to-user strimzi-topic-operator --serviceaccount strimzi-cluster-operator
+```
+
+To override the deployment configuration run:
 
 ```execute
 oc set env deployment/strimzi-cluster-operator STRIMZI_NAMESPACE='*'
@@ -62,8 +72,10 @@ Wait for the re-deployment to complete.
 oc rollout status deployment/strimzi-cluster-operator
 ```
 
-### Per project role bindings
+### Loading the Kafka templates
 
-Although all namespaces will now be monitored, any project that wants to be able to create a Kafka cluster, must first have appropriate role bindings created in that project, as it appears that the Kafka operator itself cannot create them when monitoring projects other than the one it is deployed in.
+The Kafka operator provides a number of templates to make it easier to deploy a Kafka cluster. To load the templates into the `openshift` project so they are available to all users of the cluster from the service catalog, run:
 
-For the learning portal configuration, this will have to be done using steps run when each project is created.
+```execute
+oc apply -f strimzi-kafka-operator/examples/templates/cluster-operator -n openshift
+```
