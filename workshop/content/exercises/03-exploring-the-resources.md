@@ -9,7 +9,7 @@ The:
 kafka.kafka.strimzi.io/my-cluster
 ```
 
-object created in the prior step is only that for the CRD object describing the Kafka cluster. Behind the scenes, the Kafka operator will create additional resources objects corresponding to the deployments (statefulsets) for the ZooKeeper and Kafka instances, service objects which allow them to be accessed within the cluster, as well as config maps, secrets, service accounts, role bindings etc.
+object created in the prior step is only that for the CRD object describing the Kafka cluster. Behind the scenes, the Kafka operator will create additional resources objects corresponding to the deployments for the ZooKeeper and Kafka instances, service objects which allow them to be accessed within the cluster, as well as config maps, secrets, service accounts, role bindings etc.
 
 To see the list of resource objects created, start out by running:
 
@@ -81,5 +81,5 @@ Except for the service accounts and role bindings, the Kafka operator will add l
 To query the resources related to `my-cluster` using a label selector, use:
 
 ```execute
-oc get all,configmap,secret,serviceaccount,rolebinding --selector strimzi.io/cluster=my-cluster
+oc get all,configmap,secret,serviceaccount,rolebinding -o name --selector strimzi.io/cluster=my-cluster
 ```

@@ -18,6 +18,8 @@ The primary CRD object you need to create to request the creation of a Kafka clu
 oc auth can-i create kafkas.kafka.strimzi.io
 ```
 
+Where the response is `yes`, you are good to go and have the appropriate role access.
+
 In this workshop environment, you can see the full list of Kafka CRDs (resources) you can work with, and the actions (verbs) you can take, by running:
 
 ```execute
