@@ -1,4 +1,5 @@
 ---
+Sort: 1
 Title: Installing the Operator
 ---
 
@@ -78,4 +79,46 @@ The Kafka operator provides a number of templates to make it easier to deploy a 
 
 ```execute
 oc apply -f strimzi-kafka-operator/examples/templates/cluster-operator -n openshift
+```
+
+### Grant users Kafka admin rights
+
+The service account a user works through, when a workshop is deployed through the learning portal configuration, will not have any ability to create Kafka clusters. This is because by default, only clusters admins can create the required custom resource definitions that will trigger the creation of a Kafka cluster. In order that a workshop user when using this configuration can create Kafka clusters, they need to be granted additional cluster roles.
+
+Presuming that the workshop is already deployed through the learning portal configuration, and additional cluster policy rules have not been added, run:
+
+```execute
+oc patch clusterrole %jupyterhub_application%-%jupyterhub_namespace%-account --patch '
+{
+  "rules": [
+    {
+      "apiGroups": [
+        "kafka.strimzi.io"
+      ],
+      "resources": [
+        "kafkas",
+        "kafkaconnects",
+        "kafkaconnects2is",
+        "kafkamirrormakers",
+        "kafkausers",
+        "kafkatopics"
+      ],
+      "verbs": [
+        "get",
+        "list",
+        "watch",
+        "create",
+        "delete",
+        "patch",
+        "update"
+      ]
+    }
+  ]
+}'
+```
+
+You will now need to restart the learning portal to pick up the new roles. This will cause this workshop session to be killed, so you will need to restart to test the result.
+
+```execute
+oc rollout latest %jupyterhub_application% -n %jupyterhub_namespace%
 ```
