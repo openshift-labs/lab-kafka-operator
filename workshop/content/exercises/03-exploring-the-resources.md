@@ -9,7 +9,7 @@ The:
 kafka.kafka.strimzi.io/my-cluster
 ```
 
-object created in the prior step is only that for the CRD object describing the Kafka cluster. Behind the scenes, the Kafka operator will create additional resources objects corresponding to the deployments (statefulsets) for the ZooKeeper and Kafka instances, service objects which allow them to be accessed within the cluster, as well as config maps, service accounts, role bindings etc.
+object created in the prior step is only that for the CRD object describing the Kafka cluster. Behind the scenes, the Kafka operator will create additional resources objects corresponding to the deployments (statefulsets) for the ZooKeeper and Kafka instances, service objects which allow them to be accessed within the cluster, as well as config maps, secrets, service accounts, role bindings etc.
 
 To see the list of resource objects created, start out by running:
 
@@ -43,16 +43,22 @@ When using `all` with the `oc get` command though, `all` doesn't actually mean a
 
 
 ```execute
-oc get configmap -o name
+oc get configmap,secret -o name
 ```
 
-to see the list of config maps created:
+to see the list of config maps and secrets created:
 
 ```
 configmap/my-cluster-entity-topic-operator-config
 configmap/my-cluster-entity-user-operator-config
 configmap/my-cluster-kafka-config
 configmap/my-cluster-zookeeper-config
+secret/my-cluster-clients-ca
+secret/my-cluster-clients-ca-cert
+secret/my-cluster-cluster-ca
+secret/my-cluster-cluster-ca-cert
+secret/my-cluster-cluster-operator-certs
+secret/my-cluster-zookeeper-nodes
 ```
 
 Run:
@@ -75,5 +81,5 @@ Except for the service accounts and role bindings, the Kafka operator will add l
 To query the resources related to `my-cluster` using a label selector, use:
 
 ```execute
-oc get all,configmap,serviceaccount,rolebinding --selector strimzi.io/cluster=my-cluster
+oc get all,configmap,secret,serviceaccount,rolebinding --selector strimzi.io/cluster=my-cluster
 ```
