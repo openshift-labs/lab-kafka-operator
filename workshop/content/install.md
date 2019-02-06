@@ -1,5 +1,5 @@
 ---
-Sort: 1
+Sort: 2
 Title: Installing the Operator
 ---
 
