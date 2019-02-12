@@ -9,7 +9,7 @@ The:
 kafka.kafka.strimzi.io/my-cluster
 ```
 
-object created in the prior step is only that for the CRD object describing the Kafka cluster. Behind the scenes, the Kafka operator will create additional resources objects corresponding to the deployments for the ZooKeeper and Kafka instances, service objects which allow them to be accessed within the cluster, as well as config maps, secrets, service accounts, role bindings etc.
+object created in the prior step is only that for the CRD object describing the Kafka cluster. Behind the scenes, the Kafka operator will create additional resource objects corresponding to the deployments for the ZooKeeper and Kafka instances, service objects which allow them to be accessed within the cluster, as well as config maps, secrets, service accounts, role bindings etc.
 
 To see the list of resource objects created, start out by running:
 
@@ -22,11 +22,7 @@ This should display output similar to:
 ```
 pod/my-cluster-entity-operator-c578d9645-nmdgc
 pod/my-cluster-kafka-0
-pod/my-cluster-kafka-1
-pod/my-cluster-kafka-2
 pod/my-cluster-zookeeper-0
-pod/my-cluster-zookeeper-1
-pod/my-cluster-zookeeper-2
 service/my-cluster-kafka-bootstrap
 service/my-cluster-kafka-brokers
 service/my-cluster-zookeeper-client
