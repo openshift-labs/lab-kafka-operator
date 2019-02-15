@@ -1,0 +1,2 @@
+TERMINAL_TAB=split
+KAFKA_OPTS=-XX:-AssumeMP

@@ -9,6 +9,10 @@ RUN rm -rf /tmp/src/.git* && \
     chgrp -R 0 /tmp/src && \
     chmod -R g+w /tmp/src
 
+
+ENV TERMINAL_TAB=split \
+    KAFKA_OPTS=-XX:-AssumeMP
+
 USER 1001
 
 RUN /usr/libexec/s2i/assemble
