@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# Checkout a copy of the Git repository for the Kafka operator. This is to
+# Download a copy of the source code for the Kafka operator. This is to
 # make it easier to deploy the Kafka operator into the cluster initially. See
 # installation steps in 'workshop/exercises/00-installing-the-operator.md'.
 
-git clone https://github.com/strimzi/strimzi-kafka-operator.git
+curl -L -o /tmp/strimzi-0.11.1.tar.gz https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.11.1/strimzi-0.11.1.tar.gz
+
+tar xvfz /tmp/strimzi-0.11.1.tar.gz
+
+rm /tmp/strimzi-0.11.1.tar.gz
 
 # Download Kafka binaries so we have access to various Kafka client scripts.
 

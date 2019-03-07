@@ -32,7 +32,7 @@ oc new-project kafka-operator
 The resource objects for any role bindings need to be updated explicitly with the namespace the role binding is being created in.
 
 ```execute
-sed -i "s/namespace: .*/namespace: kafka-operator/" strimzi-kafka-operator/install/cluster-operator/*RoleBinding*.yaml
+sed -i "s/namespace: .*/namespace: kafka-operator/" strimzi-0.11.1/install/cluster-operator/*RoleBinding*.yaml
 ```
 
 ### Deploy the Kafka operator application
@@ -40,7 +40,7 @@ sed -i "s/namespace: .*/namespace: kafka-operator/" strimzi-kafka-operator/insta
 You are ready to deploy the Kafka operator.
 
 ```execute
-oc apply -f strimzi-kafka-operator/install/cluster-operator
+oc apply -f strimzi-0.11.1/install/cluster-operator
 ```
 
 Wait for the initial deployment to complete.
@@ -78,7 +78,7 @@ oc rollout status deployment/strimzi-cluster-operator
 The Kafka operator provides a number of templates to make it easier to deploy a Kafka cluster. To load the templates into the `openshift` project so they are available to all users of the cluster from the service catalog, run:
 
 ```execute
-oc apply -f strimzi-kafka-operator/examples/templates/cluster-operator -n openshift
+oc apply -f strimzi-0.11.1/examples/templates/cluster-operator -n openshift
 ```
 
 ### Grant users Kafka admin rights
