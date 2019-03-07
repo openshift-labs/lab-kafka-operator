@@ -72,7 +72,7 @@ rolebinding.authorization.openshift.io/strimzi-my-cluster-entity-topic-operator
 rolebinding.authorization.openshift.io/strimzi-my-cluster-entity-user-operator
 ```
 
-Except for the service accounts and role bindings, the Kafka operator will add labels to the resources created so those for a specific instance can be queried using a label selector.
+The Kafka operator will add labels to the resources created so those for a specific instance can be queried using a label selector.
 
 To query the resources related to `my-cluster` using a label selector, use:
 
