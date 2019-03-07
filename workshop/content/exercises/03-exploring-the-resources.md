@@ -1,6 +1,7 @@
 ---
 Title: Exploring the Resources
 PrevPage: 02-creating-the-cluster
+NextPage: 04-topic-level-configs
 ---
 
 The:
