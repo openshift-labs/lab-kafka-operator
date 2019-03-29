@@ -4,20 +4,8 @@
 # make it easier to deploy the Kafka operator into the cluster initially. See
 # installation steps in 'workshop/exercises/00-installing-the-operator.md'.
 
-curl -L -o /tmp/strimzi-0.11.1.tar.gz https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.11.1/strimzi-0.11.1.tar.gz
+curl -sL -o /tmp/strimzi-0.11.1.tar.gz https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.11.1/strimzi-0.11.1.tar.gz
 
 tar xvfz /tmp/strimzi-0.11.1.tar.gz
 
 rm /tmp/strimzi-0.11.1.tar.gz
-
-# Download Kafka binaries so we have access to various Kafka client scripts.
-
-curl -q -o /tmp/kafka.tar.gz http://apache.osuosl.org/kafka/2.1.0/kafka_2.12-2.1.0.tgz
-
-mkdir /opt/app-root/kafka
-
-tar -C /opt/app-root/kafka --strip-components 1 -xvf /tmp/kafka.tar.gz
-
-rm /tmp/kafka.tar.gz
-
-# Add Kafka bin directory to shell profile scripts.

@@ -1,5 +1,5 @@
 ---
-Sort: 2
+Sort: 3
 Title: Workshop Summary
 Exit Sign: Finish Workshop
 ---
