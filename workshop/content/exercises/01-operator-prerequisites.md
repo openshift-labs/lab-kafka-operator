@@ -20,37 +20,8 @@ oc auth can-i create kafkas.kafka.strimzi.io
 
 Where the response is `yes`, you are good to go and have the appropriate role access.
 
-In this workshop environment, you can see the full list of Kafka CRDs (resources) you can work with, and the actions (verbs) you can take, by running:
+You can see a list of all the CRD objects used by the Kafka operator by running:
 
 ```execute
-oc get clusterroles %jupyterhub_application%-%jupyterhub_namespace%-account -o yaml
+oc api-resources --api-group kafka.strimzi.io
 ```
-
-This should generate output similar to:
-
-```
-apiVersion: authorization.openshift.io/v1
-kind: ClusterRole
-metadata:
-  name: try-kafka-account
-rules:
-- apiGroups:
-  - kafka.strimzi.io
-  resources:
-  - kafkaconnects
-  - kafkaconnects2is
-  - kafkamirrormakers
-  - kafkas
-  - kafkatopics
-  - kafkausers
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-```
-
-The actual name of the `clusterrole` to consult will depend on how the cluster admin setup the roles and delegated them to your user.
