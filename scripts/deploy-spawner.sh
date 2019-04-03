@@ -8,8 +8,8 @@ fail()
 
 WORKSHOP_IMAGE="quay.io/openshiftlabs/lab-kafka-operator:latest"
 
-TEMPLATE_REPO=https://raw.githubusercontent.com/openshift-labs/workshop-jupyterhub
-TEMPLATE_VERSION=2.11.1
+TEMPLATE_REPO=https://raw.githubusercontent.com/openshift-labs/workshop-spawner
+TEMPLATE_VERSION=3.0.3
 TEMPLATE_FILE=learning-portal-production.json
 TEMPLATE_PATH=$TEMPLATE_REPO/$TEMPLATE_VERSION/templates/$TEMPLATE_FILE
 
