@@ -53,7 +53,15 @@ oc exec -it my-cluster-kafka-0 \
    --topic example-cli
 ```
 
-Let's test our server by running a simple application. On one terminal, we're going to run a _Producer Application_ that will read messages from the command line and send them to a KafkaTopic on the Kafka Server.
+We can verify that the topic we have created programatically by running this application also exists as a `KafkaTopic` resource:
+
+```execute
+oc get kafkatopics
+```
+
+We should now see both topics created.
+
+Let's now test our server by running a simple application. On one terminal, we're going to run a _Producer Application_ that will read messages from the command line and send them to a KafkaTopic on the Kafka Server.
 
 ```execute-1
 oc run kafka-producer -ti \
