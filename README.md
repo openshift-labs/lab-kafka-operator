@@ -21,7 +21,7 @@ oc new-project workshops
 From within the top level of the Git repository, now run:
 
 ```
-./scripts/deploy-spawner.sh
+./.workshop/scripts/deploy-spawner.sh
 ```
 
 The name of the deployment will be ``kakfa-lab``.
