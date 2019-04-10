@@ -59,3 +59,11 @@ kafka.kafka.strimzi.io/my-cluster created
 ```
 
 Note that if you compare the contents of the `kafka.yaml` file, with the above example, you will see a bunch of resource settings for memory and CPU. The resource settings are set specific to the quota constraints of this workshop environment and not relevant to demonstrating how the Kafka operator works.
+
+We can also verify the Kafka server resource that has been created:
+
+```execute
+oc get kafka/my-cluster -o yaml
+```
+
+Let's now explore our Kafka cluster.

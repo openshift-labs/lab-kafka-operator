@@ -4,8 +4,13 @@
 # make it easier to deploy the Kafka operator into the cluster initially. See
 # installation steps in 'workshop/exercises/00-installing-the-operator.md'.
 
-curl -sL -o /tmp/strimzi-0.11.1.tar.gz https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.11.1/strimzi-0.11.1.tar.gz
+# curl -sL -o /tmp/strimzi-0.11.1.tar.gz https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.11.1/strimzi-0.11.1.tar.gz
 
-tar xvfz /tmp/strimzi-0.11.1.tar.gz
+# tar xvfz /tmp/strimzi-0.11.1.tar.gz
 
-rm /tmp/strimzi-0.11.1.tar.gz
+# rm /tmp/strimzi-0.11.1.tar.gz
+
+mv workshop /opt/app-root/workshop
+
+# Delete all non required files from the image
+rm -rf Dockerfile README.md LICENSE
