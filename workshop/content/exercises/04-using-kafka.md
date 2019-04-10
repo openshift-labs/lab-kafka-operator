@@ -1,5 +1,5 @@
 ---
-Title: Topic Level Configs
+Title: Using Kafka
 PrevPage: 03-exploring-the-resources
 NextPage: ../finish
 ---
