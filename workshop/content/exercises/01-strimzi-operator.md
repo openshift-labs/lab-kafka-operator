@@ -26,6 +26,8 @@ You can see a list of all the CRD objects used by the Kafka operator by running:
 oc api-resources --api-group kafka.strimzi.io
 ```
 
+__NOTE__: Any time you need to reference any of these resources, you can use the non fully qualified name or the reduced form of the resource name (e.g. `oc get kafkas` or `oc get k`)
+
 These resources represent Kafka specific elements:
 
 * A __Kafka__ resource for the Kafka cluster. You can use Strimzi to deploy an ephemeral or persistent Kafka cluster to OpenShift or Kubernetes. When installing Kafka, Strimzi also installs a Zookeeper cluster and adds the necessary configuration to connect Kafka with Zookeeper.

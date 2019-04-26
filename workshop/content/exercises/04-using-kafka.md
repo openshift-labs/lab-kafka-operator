@@ -53,7 +53,7 @@ oc exec -it my-cluster-kafka-0 \
    --topic example-cli
 ```
 
-We can verify that the topic we have created programatically by running this application also exists as a `KafkaTopic` resource:
+We can verify that the topic we have created programatically (`example-cli`) by running this application also exists as a `KafkaTopic` resource:
 
 ```execute
 oc get kafkatopics

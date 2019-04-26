@@ -66,4 +66,10 @@ We can also verify the Kafka server resource that has been created:
 oc get kafka/my-cluster -o yaml
 ```
 
+Or look at the more human friendly representation of this same information:
+
+```execute
+oc describe kafka/my-cluster
+```
+
 Let's now explore our Kafka cluster.
