@@ -8,6 +8,9 @@ fail()
 
 WORKSHOP_IMAGE="quay.io/openshiftlabs/lab-kafka-operator:latest"
 
+RESOURCE_BUDGET="x-large"
+LETS_ENCRYPT=${LETS_ENCRYPT:-false}
+
 TEMPLATE_REPO=https://raw.githubusercontent.com/openshift-labs/workshop-spawner
 TEMPLATE_VERSION=3.0.6
 TEMPLATE_FILE=learning-portal-production.json
@@ -28,7 +31,10 @@ echo
 
 oc process -f $TEMPLATE_PATH \
     --param APPLICATION_NAME="$JUPYTERHUB_APPLICATION" \
-    --param PROJECT_NAME="$JUPYTERHUB_NAMESPACE" | oc apply -f -
+    --param PROJECT_NAME="$JUPYTERHUB_NAMESPACE" \
+    --param RESOURCE_BUDGET="$RESOURCE_BUDGET" \
+    --param HOMEROOM_LINK="$HOMEROOM_LINK" \
+    --param LETS_ENCRYPT="$LETS_ENCRYPT" | oc apply -f -
 
 if [ "$?" != "0" ]; then
     fail "Error: Failed to create deployment for spawner."
