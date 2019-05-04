@@ -6,7 +6,7 @@ fail()
     exit 1
 }
 
-WORKSHOP_IMAGE="quay.io/openshiftlabs/lab-kafka-operator:1.0"
+WORKSHOP_IMAGE="quay.io/openshiftlabs/lab-kafka-operator:1.1"
 
 RESOURCE_BUDGET="x-large"
 LETS_ENCRYPT=${LETS_ENCRYPT:-false}
