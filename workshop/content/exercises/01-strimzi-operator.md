@@ -8,7 +8,7 @@ Strimzi uses the Cluster Operator to deploy and manage Kafka (including Zookeepe
 
 ![Cluster Operator](cluster_operator.png)
 
-In this workshop environment, the Kafka operator has been pre-installed ready for use, and is monitoring all projects for requests to create a Kafka cluster. The user you are running the workshop as has also been delegated the appropriate roles to allow it to act as a Kafka admin.
+In this workshop environment, the Kafka operator has been pre-installed ready for use, and is monitoring the project for requests to create a Kafka cluster. The user you are running the workshop as has also been delegated the appropriate roles to allow it to act as a Kafka admin.
 
 To validate that your user has been granted the appropriate roles, you can use the `oc auth can-i` command to see whether you can create the custom resource definition (CRD) objects the Kafka operator responds to.
 
