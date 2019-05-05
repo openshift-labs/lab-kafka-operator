@@ -14,7 +14,7 @@ To query the resources related to `my-cluster` using a label selector, use:
 oc get all,configmap,secret,serviceaccount,rolebinding -o name --selector strimzi.io/cluster=my-cluster
 ```
 
-Let now see if we can use the cluster, we need to wait until it is fully deployed and running. Let's monitor the status of our Kafka related deployments:
+Let now see if we can use the cluster. We need to wait until it is fully deployed and running. Let's monitor the status of our Kafka related deployments:
 
 ```execute
 watch oc get deployment,statefulset --selector strimzi.io/cluster=my-cluster
