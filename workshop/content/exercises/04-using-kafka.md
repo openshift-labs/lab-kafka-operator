@@ -4,9 +4,9 @@ PrevPage: 03-exploring-the-resources
 NextPage: ../finish
 ---
 
-Kafka is a distributed messaging system which uses a pub-sub model. All messages are organized into topics. If you wish to send a message you send it to a specific topic and if you wish to read a message you read it from a specific topic. A consumer pulls messages off of a Kafka topic while producers push messages into a Kafka topic.
+Kafka is a distributed messaging system which uses a pub-sub model. All messages are organized into topics. If you wish to send a message, you send it to a specific topic, and, if you wish to read a message, you read it from a specific topic. A consumer pulls messages off of a Kafka topic while producers push messages into a Kafka topic.
 
-An example of a `Kafka Topic` Custom Resource object definition you might use, is:
+An example of a `Kafka Topic` Custom Resource object definition you might use is as follows:
 
 ```
 apiVersion: kafka.strimzi.io/v1alpha1
@@ -59,7 +59,13 @@ We can verify that the topic we have created programatically (`example-cli`) by 
 oc get kafkatopics
 ```
 
-We should now see both topics created.
+We should now see both topics created:
+
+```
+NAME          AGE
+example-cli   3s
+my-topic      38s
+```
 
 Let's now test our server by running a simple application. On one terminal, we're going to run a _Producer Application_ that will read messages from the command line and send them to a KafkaTopic on the Kafka Server.
 
