@@ -1,11 +1,11 @@
 Lab - Kafka Operator
 ====================
 
-This workshop provides an introduction to deploying a Kafa cluster using the Kafa operator. Use of the operator is from the perspective of a developer.
+This workshop provides an introduction to deploying a Kafka cluster using the Kafka operator. Use of the operator is from the perspective of a developer.
 
 The workshop uses the HomeRoom workshop environment in the learning portal configuration. You will need to be a cluster admin in order to deploy it.
 
-When the URL for the workshop environment is accessed, a workshop session will be created on demand. This will include a project for the session, into which the Kafa operator will have been pre-installed.
+When the URL for the workshop environment is accessed, a workshop session will be created on demand. This will include a project for the session, into which the Kafka operator will have been pre-installed.
 
 Deploying the Workshop
 ----------------------
@@ -80,10 +80,10 @@ To delete the build configuration for the workshop image, run:
 ./.workshop/scripts/delete-workshop.sh
 ```
 
-To delete special resources for CRDs and cluster roles for the Kafa operator, run:
+To delete special resources for CRDs and cluster roles for the Kafka operator, run:
 
 ```
 ./.workshop/scripts/delete-resources.sh
 ```
 
-Only delete these last set of resources if the Kafa operator is not being used elsewhere in the cluster. Ideally this workshop environment should only be deployed in an expendable cluster, and not one which is shared for other work.
+Only delete these last set of resources if the Kafka operator is not being used elsewhere in the cluster. Ideally this workshop environment should only be deployed in an expendable cluster, and not one which is shared for other work.
