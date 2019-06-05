@@ -1,0 +1,9 @@
+- name: playbook to provision the lab
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  vars:
+    apb_action: provision
+  roles:
+  - role: common-definitions
+  - role: provision-lab

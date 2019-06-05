@@ -1,0 +1,9 @@
+- name: playbook to deprovision the lab
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  vars:
+    apb_action: deprovision
+  roles:
+  - role: common-definitions
+  - role: deprovision-lab

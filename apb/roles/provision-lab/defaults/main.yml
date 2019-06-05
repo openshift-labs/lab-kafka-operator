@@ -1,0 +1,45 @@
+---
+# defaults file for provision-lab-developing-with-odo
+
+# user_count: 8 # Comes from the APB
+# openshift_user: admin
+# openshift_password: admin
+
+# LAB SPECIFIC INFO
+__lab_name: "lab-kafka-operator"
+__lab_description: "Kafka Operator"
+reource_budget: "x-large"
+workshop_envvars: ""
+terminal_envvars: ""
+gateway_envvars: ""
+lets_encrypt: false
+
+this_workshop_json: 
+  - title: "{{ __lab_name }}"
+    description: "{{ __lab_description }}"
+    url: "{{ lab_url }}"
+
+workshop_image_name: "quay.io/openshiftlabs/lab-kafka-operator"
+workshop_image_tag: "1.4"
+__workshop_image: "{{ workshop_image_name }}:{{ workshop_image_tag }}"
+
+spawner_template_repo: "https://raw.githubusercontent.com/openshift-labs/workshop-spawner"
+spawner_template_version: "3.2.1"
+spawner_template_file: "learning-portal-production.json"
+spawner_template_path: "{{spawner_template_repo}}/{{spawner_template_version}}/templates/{{spawner_template_file}}"
+
+homeroom_template_repo:  "https://raw.githubusercontent.com/openshift-labs/workshop-homeroom"
+homeroom_template_version: "1.4.0"
+homeroom_template_file: "production.json"
+homeroom_template_path: "{{homeroom_template_repo}}/{{homeroom_template_version}}/templates/{{homeroom_template_file}}"
+homeroom_app_name: "homeroom"
+
+nodeselector: ""
+
+images_to_prepull: 
+  - image: "quay.io/openshiftlabs/workshop-spawner:{{ spawner_template_version }}"
+    name: "spawner"
+  - image: "{{ __workshop_image }}"
+    name: "workshop"
+  - image: "quay.io/openshift/origin-console:latest"
+    name: "console"
