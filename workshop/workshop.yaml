@@ -1,0 +1,10 @@
+name: Using the Kafka Operator
+
+modules:
+    activate:
+    - index
+    - exercises/01-strimzi-operator
+    - exercises/02-creating-the-cluster
+    - exercises/03-exploring-the-resources
+    - exercises/04-using-kafka
+    - finish

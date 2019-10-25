@@ -1,10 +1,3 @@
----
-Sort: 1
-Title: Lab Overview
-NextPage: exercises/01-strimzi-operator
-ExitSign: Start Lab
----
-
 The [Apache Kafka](https://kafka.apache.org/) site describes Kafka as:
 
 > Apache Kafka® is a distributed streaming platform. What exactly does that mean?

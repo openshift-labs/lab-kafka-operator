@@ -1,9 +1,3 @@
----
-Title: Exploring the Kakfa Cluster
-PrevPage: 02-creating-the-cluster
-NextPage: 04-using-kafka
----
-
 The `kafka/my-cluster` object created in the prior step is only that for the CRD object describing the Kafka cluster. Behind the scenes, the Kafka operator will create additional resource objects corresponding to the deployments for the ZooKeeper and Kafka instances, service objects which allow them to be accessed within the cluster, as well as config maps, secrets, service accounts, role bindings etc.
 
 The Kafka operator will add labels to the resources created so those for a specific instance can be queried using a label selector.

@@ -1,9 +1,3 @@
----
-Title: Creating the Cluster
-PrevPage: 01-operator-prerequisites
-NextPage: 03-exploring-the-resources
----
-
 You can use the Kafka operator to deploy an ephemeral or persistent Kafka cluster to OpenShift. When deploying Kafka, the operator also installs a Zookeeper cluster and adds the necessary configuration to connect Kafka with Zookeeper.
 
 An ephemeral (that is, temporary) Kafka cluster is suitable for development and testing purposes, not for production. This deployment uses `emptyDir` volumes for storing broker information (for Zookeeper) and topics or partitions (for Kafka). Using an `emptyDir` volume means that its content is strictly related to the pod life cycle and is deleted when the pod goes down.

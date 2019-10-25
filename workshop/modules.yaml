@@ -1,0 +1,18 @@
+config:
+    google_tracking_id: UA-135921114-2
+    
+modules:
+    index:
+        name: Workshop Overview
+        exit_sign: Start Workshop
+    exercises/01-strimzi-operator:
+        name: Operator Prerequisites
+    exercises/02-creating-the-cluster:
+        name: Creating the Cluster
+    exercises/03-exploring-the-resources:
+        name: Exploring the Kakfa Cluster
+    exercises/04-using-kafka:
+        name: Using Kafka
+    finish:
+        name: Workshop Summary
+        exit_sign: Finish Workshop
